@@ -1,5 +1,8 @@
-.App {
-  margin: 0 auto;
-  max-width: 1440px;
+.App { 
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
 }

@@ -1,0 +1,29 @@
+.footer {
+    font-size: 14px;
+    font-family: 'Inter';
+    height: 137px;
+    background: #029491;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.logo {
+    padding-left: 60px;
+}
+
+.adress {
+    color: white;
+    padding-right: 45px;
+    text-align: right;
+    letter-spacing: 0.01em;
+}
+
+.author {
+    padding-top: 10px;
+}

@@ -1,0 +1,72 @@
+.header {
+    font-size: 14px;    
+    padding: 0 60px 0 40px;
+    align-items: center;
+    height: 93px;
+    font-family: 'Inter';
+    line-height: 17px;    
+    letter-spacing: 0.01em;
+}
+
+.content {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a:not(:last-child) {
+    padding: 0 49px 0 0;
+}
+
+.info {
+    font-size: 10px;
+}
+
+.infoUse {
+    font-size: 14px;
+    font-weight: 700;
+}
+.infoUse {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.infoLim {
+    font-size: 14px;
+    color: #8AC540;
+    font-weight: 700;
+}
+
+
+.user {
+    position: relative;
+}
+
+.userLogo {
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    left: 105%;
+}
+
+.userName {
+    opacity: 0.7;
+}
+
+.button {
+    border: none;
+    background: rgb(255, 255, 255);
+    opacity: 0.4;
+    cursor: pointer;
+    padding-left: ;
+}

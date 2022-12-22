@@ -1,8 +1,22 @@
 .App { 
   text-align: center;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 14px;
+  font-family: 'Inter';
 }
 
 a {
   text-decoration: none;
   color: inherit
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Ferry';
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-align: left;
+  text-transform: uppercase;
 }

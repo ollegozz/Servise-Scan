@@ -1,8 +1,6 @@
-.header {
-    font-size: 14px;   
+.header { 
     align-items: center;
     height: 93px;
-    font-family: 'Inter';
     line-height: 17px;    
     letter-spacing: 0.01em;
     max-width: 1440px;
@@ -27,6 +25,10 @@
 .menu {
     display: flex;
     justify-content: space-between;
+}
+
+.menu a:hover  {
+    color: #029491;
 }
 
 .menu a:not(:last-child) {

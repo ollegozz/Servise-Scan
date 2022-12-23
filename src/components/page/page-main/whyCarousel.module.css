@@ -1,0 +1,59 @@
+.carousel {
+    text-align: center;
+}
+
+.title {
+    font-size: 45px;
+    padding: 100px 0px 70px 60px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    flex: 0 1 33.33%;
+    height: 225px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+}
+
+.card:nth-child(3) {
+    margin: 0 30px;
+}
+
+.cardIcon {
+    text-align: left;
+    padding: 22px 0 12px 19px;
+}
+
+.cardText {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding: 12px 10px 10px 20px;
+}
+
+.arr {
+    cursor: pointer;
+}
+
+.arrLeft {
+    margin-left: 40px;
+}
+
+.arrRight {
+    transform: rotate(180deg);
+    margin-right: 40px;
+}
+
+.whyImage {
+    padding-top: 95px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    overflow: hidden
+}

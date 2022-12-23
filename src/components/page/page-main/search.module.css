@@ -1,0 +1,59 @@
+.title {
+    font-size: 45px;
+    padding: 100px 0px 70px 60px;
+}
+
+.servise {
+    display: flex;
+}
+
+.text {
+    flex: 0 1 50%;
+    text-align: left;
+}
+
+.image {
+    flex: 0 1 50%;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.titleName {
+    font-size: 60px;
+    line-height: 72px;
+    padding: 45px 0 0 60px;
+}
+
+.subTitle {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    padding: 20px 0 70px 60px;
+}
+
+.btnCont {
+    padding-left: 60px;
+}
+
+.button {
+    width: 335px;
+    height: 59px;
+    background: #5970FF;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    border: 0;
+}
+
+@media (max-width: 1430px) {
+    .title {
+        font-size: 45px;
+    }
+}

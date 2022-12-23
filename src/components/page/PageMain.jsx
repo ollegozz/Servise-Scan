@@ -5,6 +5,7 @@ import imgCheck from '../image/img/mainCheck.jpg'
 import time from '../image/icon/time.svg'
 import loupe from '../image/icon/loupe.svg'
 import sheild from '../image/icon/sheild.svg'
+import arr from '../image/icon/arr.svg'
 
 export default function PageMain() {
     return (
@@ -12,7 +13,7 @@ export default function PageMain() {
             <div className={css.content}>
                 <div className={css.servise}>
                     <div className={css.text}>
-                        <h1 className={css.title}>
+                        <h1 className={css.titleName}>
                             сервис по поиску <br />публикаций <br />о компании <br />по его ИНН
                         </h1>
                         <div className={css.subTitle}>
@@ -27,11 +28,14 @@ export default function PageMain() {
                         <img src={imgSearch} alt="imgSearch" />
                     </div>
                 </div>
+
                 <div className={css.why}>
-                    <h1 className={css.whyTitle}>Почему именно мы</h1>
-                    <div className={css.carousel}>                        
+                    <h1 className={css.title}>Почему именно мы</h1>
+                    <div className={css.carousel}>
                         <div className={css.cards}>
-                            <div className={css.arr}>&#60;</div>
+                            <div className={css.arr}>
+                                <img className={css.arrLeft} src={arr} alt="arrow" />
+                            </div>
                             <div className={css.card}>
                                 <div className={css.cardIcon}>
                                     <img src={time} alt="time" />
@@ -45,7 +49,7 @@ export default function PageMain() {
                                     <img src={loupe} alt="loupe" />
                                 </div>
                                 <div className={css.cardText}>
-                                    Огромная комплексная база данных, 
+                                    Огромная комплексная база данных,
                                     обеспечивающая объективный ответ на запрос
                                 </div>
                             </div>
@@ -54,15 +58,41 @@ export default function PageMain() {
                                     <img src={sheild} alt="sheild" />
                                 </div>
                                 <div className={css.cardText}>
-                                    Защита конфеденциальных сведений, не подлежащих 
+                                    Защита конфеденциальных сведений, не подлежащих
                                     разглашению по федеральному законодательству
                                 </div>
                             </div>
-                            <div className={css.arr}>&#62;</div>
+                            <div className={css.arr}>
+                                <img className={css.arrRight} src={arr} alt="arrow" />
+                            </div>
                         </div>
                     </div>
                     <div className={css.whyImage}>
                         <img src={imgCheck} alt="imgCheck" />
+                    </div>
+                </div>
+
+                <div className={css.tarifs}>
+                    <h1 className={css.title}>наши тарифы</h1>
+                    <div className={css.tarifCards}>
+                        <div className={css.tarifCard}>
+                            <div className={css.tarifHeader}>
+                                <div className={css.tarifTitle}>Beginner</div>
+                                <div className={css.tarifSubTitle}>Для небольшого исследования</div>
+                            </div>
+                            <div className={css.tarifPrice}>
+                                <div className={css.riceTitle}>799 ₽ <span>1 200 ₽</span></div>
+                                <div className={css.priceSubTitle}>или 150 ₽/мес. при рассрочке на 24 мес.</div>
+                            </div>
+
+                            <div className={css.tarifList}>
+                                <div className={css.listTitle}>В тариф входит:
+                                    <div className={css.listSubTitle}>или 150 ₽/мес. при рассрочке на 24 мес.</div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

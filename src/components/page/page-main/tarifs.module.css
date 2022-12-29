@@ -1,5 +1,5 @@
 .button {
-    width: 335px;
+    width: 100%;
     height: 59px;
     background: #5970FF;
     border-radius: 5px;
@@ -16,14 +16,19 @@
     padding: 0 60px 0 60px;
     justify-content: center;
     padding-bottom: 118px;
+    flex-wrap: wrap;
 }
 
 .tarifCard {
-    height: 540px;
+    flex: 0 1 33.33%;
+    max-height: 540px;
+    min-height: 380px;
+    max-width: 31%;
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: left;
+    position: relative;
 }
 
 .tarifCard:nth-child(2) {
@@ -121,7 +126,7 @@
 }
 
 .button {
-    width: 355px;
+    max-width: 355px;
 
 }
 
@@ -135,3 +140,19 @@
     padding: 100px 0px 70px 60px;
 }
 
+@media(max-width: 1230px) {
+    .btn {
+        flex: 0 1 auto;
+        padding: 10px 30px 24px 30px;
+    }
+
+    .priceSubTitle {
+        padding: 0 0 15px 30px;
+    }
+}
+
+@media(max-width: 1340px) {
+    .tarifImg {
+        opacity: 0.4;
+    }
+}

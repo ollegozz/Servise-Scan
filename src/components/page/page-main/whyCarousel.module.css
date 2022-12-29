@@ -49,14 +49,14 @@
 .arrLeft {
     position: absolute;
     top: 40%;
-    left: 4%;
+    left: 3%;
 }
 
 .arrRight {
     transform: rotate(180deg);
     position: absolute;
     top: 40%;
-    right: 4%;
+    right: 3%;
 }
 
 .whyImage {

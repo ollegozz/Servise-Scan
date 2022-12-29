@@ -20,7 +20,16 @@ const dataCarousel = [
         id: 3,
         img: sheild,
         description: 'Защита конфеденциальных сведений, не подлежащих разглашению по федеральному законодательству'
-    }
+    }, {
+        id: 4,
+        img: time,
+        description: 'Высокая и оперативная скорость обработки заявки'
+    }, {
+        id: 5,
+        img: loupe,
+        description: 'Огромная комплексная база данных, обеспечивающая объективный ответ на запрос'
+    },
+
 ]
 
 
@@ -30,37 +39,41 @@ export default function WhyCarousel() {
 
     const moveSlide = (e) => {
         if (e.currentTarget.id === 'left') {
-            setCarousel(dataCarousel.unshift(dataCarousel.pop()))
-            
+            const elem = carousel.splice(1, carousel.length)
+            setCarousel([...elem, ...carousel])
         } else {
-            console.log('right');
+            const elem = carousel.splice(-1, 1)
+            setCarousel([...elem, ...carousel])
         }
     }
-
-    console.log(carousel);
 
 
     return (
         <main className={css.why}>
             <h1 className={css.title}>Почему именно мы</h1>
             <div className={css.carousel}>
+                <div className={`${css.arr} ${css.arrLeft}`} id='left' onClick={moveSlide}>
+                    <img src={arr} alt="arrow" />
+                </div>
+                <div className={`${css.arr} ${css.arrRight}`} id='right' onClick={moveSlide}>
+                    <img src={arr} alt="arrow" />
+                </div>
+
                 <div className={css.cards}>
-                    <div className={css.arr} id='left' onClick={moveSlide}>
-                        <img className={css.arrLeft} src={arr} alt="arrow" />
-                    </div>
-                    {dataCarousel.map(item => (
-                        <div className={css.card} key={item.id}>
-                            <div className={css.cardIcon}>
-                                <img src={item.img} alt="" />
+
+                    {carousel.map(item => {
+                        return (
+                            <div className={css.card} key={item.id}>
+                                <div className={css.cardIcon}>
+                                    <img src={item.img} alt="logo" />
+                                </div>
+                                <div className={css.cardText}>
+                                    {item.description}
+                                </div>
                             </div>
-                            <div className={css.cardText}>
-                                {item.description}
-                            </div>
-                        </div>
-                    ))}
-                    <div className={css.arr} id='right' onClick={moveSlide}>
-                        <img className={css.arrRight} src={arr} alt="arrow" />
-                    </div>
+                        )
+                    })}
+
                 </div>
             </div>
             <div className={css.whyImage}>

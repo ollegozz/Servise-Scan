@@ -2,6 +2,7 @@ import React from 'react'
 import css from './header.module.css'
 import logo from '../../image/icon/logo.svg'
 import user from '../../image/img/user.jpg'
+import { Link } from 'react-router-dom';
 
 export default function () {
     return (
@@ -12,9 +13,9 @@ export default function () {
                 </div>
                 {/* <div className={css.item}> */}
                 <div className={css.menu}>
-                    <a href="#">Главная</a>
-                    <a href="#">Тарифы</a>
-                    <a href="#">FAQ</a>
+                    <Link to={`./`}>Главная</Link>
+                    <Link to={`./tarifs`}>Тарифы</Link>
+                    <Link to={`./FAQ`}>FAQ</Link>
                 </div>
                 <div className={css.info}>
                     <div>Использовано компаний: <span className={css.infoUse}>34</span></div>

@@ -1,10 +1,6 @@
-.title {
-    font-size: 45px;
-    padding: 100px 0px 70px 60px;
-}
-
 .servise {
     display: flex;
+    position: relative;
 }
 
 .text {
@@ -22,7 +18,7 @@
     object-fit: cover;
 }
 
-.titleName {
+.title {
     font-size: 60px;
     line-height: 72px;
     padding: 45px 0 0 60px;
@@ -55,5 +51,32 @@
 @media (max-width: 1430px) {
     .title {
         font-size: 45px;
+        line-height: 62px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .title {
+        font-size: 35px;
+        line-height: 52px;
+    }
+    .subTitle {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 890px) {
+    .title {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .image{
+        position: absolute;
+        opacity: 0.5;
+        right: 1%;
+        max-width: 50%;        
+    }
+    .image img {
+        border-radius: 50px;
     }
 }

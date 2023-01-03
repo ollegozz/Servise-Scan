@@ -66,3 +66,26 @@
     object-fit: cover;
     overflow: hidden
 }
+
+@media(max-width: 960px) {
+    .card {
+        flex: 0 1 50%;
+    }
+
+    .card:nth-child(n+3) {
+        display: none;
+    }
+        .card:nth-child(2) {
+            margin: 0 0 0 20px;
+            padding: 0;
+        }
+}
+
+@media(max-width: 710px) {
+    .card {
+        flex: 0 1 100%;
+    }
+        .card:nth-child(n+2) {
+            display: none;
+        }
+}

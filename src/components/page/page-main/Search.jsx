@@ -6,7 +6,7 @@ export default function mainSearch() {
   return (
       <main className={css.servise}>
           <div className={css.text}>
-              <h1 className={css.titleName}>
+              <h1 className={css.title}>
                   сервис по поиску <br />публикаций <br />о компании <br />по его ИНН
               </h1>
               <div className={css.subTitle}>

@@ -3,6 +3,7 @@ import css from './pageSearch.module.css'
 import document from '../../image/icon/document.svg'
 import folders from '../../image/icon/folders.svg'
 import rocket from '../../image/img/rocket.svg'
+import Search from './search'
 
 export default function PageSearch() {
     return (
@@ -25,7 +26,7 @@ export default function PageSearch() {
             </div>
             <div className={css.content}>
                 <div className={css.formSearch}>
-
+                    <Search />
                 </div>
                 <div className={css.formRocket}>
                     <img src={rocket} alt="rocket" />

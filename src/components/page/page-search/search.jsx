@@ -39,6 +39,16 @@ export default function Search() {
             onChange={e => setAmtDoc(e.target.value)}
           />
 
+          <div className={css.formTitle}>Диапазон поиска*</div>
+          <Input 
+          type='date'
+          placeholder='Дата начала'
+          />
+          <Input
+          type='date'
+          placeholder='Дата конца'
+          />
+
         </form>
       </div>
     </main>

@@ -27,3 +27,8 @@ h1 {
   text-align: left;
   text-transform: uppercase;
 }
+
+button {
+  border: none;
+  
+}

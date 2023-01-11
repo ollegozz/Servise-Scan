@@ -11,4 +11,8 @@
     text-align: left;   
     padding-bottom: 20px;
     padding-top: 30px;
+    font-family: 'Inter';
+    font-size: 18px;
+    line-height: 22px;    
+    letter-spacing: 0.03em;
 }

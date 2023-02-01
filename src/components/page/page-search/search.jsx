@@ -11,8 +11,11 @@ export default function Search() {
   const [startDate, setStartDate] = useState()
   const [finishDate, setFinishtDate] = useState()
 
-  console.log(inn);
-  console.log(amtDoc);
+  const getLog = (e) => {
+    e.preventDefault()
+    console.log(inn, amtDoc, tonality, startDate, finishDate)
+  }
+  
 
   const onChangeSelect = (e) => {
     setTonality(e)
@@ -95,7 +98,9 @@ export default function Search() {
           </div>        
         </div>
         <div className={css.btn}>
-          <button className={css.button}>Поиск</button>
+          <button className={css.button}
+          onClick={getLog}
+          >Поиск</button>
         </div>        
       </form>
     </main>

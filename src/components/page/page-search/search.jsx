@@ -100,8 +100,12 @@ export default function Search() {
         <div className={css.btn}>
           <button className={css.button}
           onClick={getLog}
-          >Поиск</button>
-        </div>        
+          >Поиск</button>  
+       </div>       
+       <div className={css.note}>
+          * Обязательные к заполнению поля
+       </div>
+        
       </form>
     </main>
   )

@@ -5,12 +5,13 @@
     border-radius: 10px;
     text-align: left;
     padding: 0 0px 0px 44px;
+    position: relative;
 }
 
 .form {
     display: flex;
     flex: 0 1 auto;
-    position: relative;
+
 }
 
 .left {
@@ -22,12 +23,12 @@
 }
 
 .formTitle {
-    text-align: left;   
+    text-align: left;
     padding-bottom: 20px;
     padding-top: 30px;
     font-family: 'Inter';
     font-size: 18px;
-    line-height: 22px;    
+    line-height: 22px;
     letter-spacing: 0.03em;
 }
 
@@ -39,8 +40,8 @@
     font-family: 'Inter';
     font-weight: 500;
     font-size: 22px;
-    line-height: 27px;    
-    letter-spacing: 0.03em;    
+    line-height: 27px;
+    letter-spacing: 0.03em;
     color: #FFFFFF;
     background: #5970FF;
     cursor: pointer;
@@ -50,13 +51,21 @@
     position: absolute;
     width: 305px;
     height: 59px;
-    right: 18%;
-    top: 97%;    
+    right: 5%;
+    bottom: 13%;
     background: #5970FF;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     cursor: pointer;
-    
+}
+
+.note {
+    text-align: right;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: #949494;
+    position: absolute;
+    right: 14%;
 }

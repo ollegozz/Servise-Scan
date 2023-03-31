@@ -8,6 +8,7 @@ import PageNotFound from './components/page/PageNotFound'
 import PageFaq from './components/page/PageFaq'
 import PageTarifs from './components/page/PageTarifs'
 import PageSearch from './components/page/page-search/PageSearch';
+import Auth from './components/popup/auth';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/tarifs' element={<PageTarifs />} />
         <Route path='/FAQ' element={<PageFaq />} />
         <Route path='/search' element={<PageSearch />} />
+        <Route path='/auth' element={<Auth />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />

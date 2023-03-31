@@ -78,3 +78,24 @@
     cursor: pointer;
     margin-right: -30%;
 }
+
+.btnReg {
+    height: 17px; 
+    line-height: 17px;    
+    letter-spacing: 0.01em;  
+    opacity: 0.4;
+    width: 146px;
+    border-right: 2px solid #029491;
+    margin-right: 20px;
+}
+
+.btnAuth {
+    height: 26px;
+    left: 1315px;
+    top: 33px;    
+    background: #7CE3E1;
+    border-radius: 5px;
+    width: 65px;
+    cursor: pointer;
+}
+

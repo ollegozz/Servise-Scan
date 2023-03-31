@@ -1,0 +1,38 @@
+.body {
+    z-index: 500;
+    position: absolute;
+    top: 1%;
+    height: 523px;
+    right: 5%;
+    width: 429px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.btnTop {
+    padding: 25px;
+    display: flex;
+    
+}
+
+.btnAuth {
+    color: #029491;
+    letter-spacing: 0.02em;
+    line-height: 19px;
+    font-size: 16px;
+    flex: 0 1 50%;
+    border-bottom: 2px solid #029491;
+    /* margin-right: 10px; */
+
+}
+
+.btnReg {
+    opacity: 0.4;
+    letter-spacing: 0.02em;
+    line-height: 19px;
+    font-size: 16px;
+    flex: 0 1 50%;
+    border-bottom: 2px solid #C7C7C7;
+    /* margin-left: 10px; */
+}

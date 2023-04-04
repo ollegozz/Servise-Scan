@@ -1,5 +1,8 @@
 import React from 'react'
 import css from './auth.module.css'
+import google from '../image/icon/google.png'
+import facebook from '../image/icon/facebook.png'
+import yandex from '../image/icon/yandex.png'
 
 export default function auth() {
     return (
@@ -9,34 +12,36 @@ export default function auth() {
                 <button className={css.btnReg}>Зарегистрироваться</button>
             </div>
 
-            <div>
+            <div className={css.input}>
                 <p>Логин или номер телефона:</p>
                 <input type="text" />
             </div>
 
-            <div>
+            <div className={css.input}>
                 <p>Пароль:</p>
                 <input type="password" />
             </div>
 
-            <div>
-                <button>Войти</button>
-                <p>Восстановить пароль</p>
+            <div className={css.btnSignIn}>
+                <button className={css.button}>Войти</button>
+                <a href="#">Восстановить пароль</a>
             </div>
 
-            <div>
+            <div className={css.loginMethods}>
                 <p>Войти через:</p>
-                <a href="" >
-                    <img src="" alt="Google" />
-                </a>
+                <div className={css.loginMethodsIcon}>
+                    <a href="" >
+                        <img src={google} alt="Google" />
+                    </a>
 
-                <a href="google.ru" >
-                    <img src="" alt="Facebook" />
-                </a>
+                    <a href="" >
+                        <img src={facebook} alt="Facebook" />
+                    </a>
 
-                <a href="google.ru" >
-                    <img src="" alt="Yandex" />
-                </a>
+                    <a href="" >
+                        <img src={yandex} alt="Yandex" />
+                    </a>
+                </div>              
                 
             </div>
 

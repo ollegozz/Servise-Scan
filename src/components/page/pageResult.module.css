@@ -1,0 +1,174 @@
+.body {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 69px 60px;
+    text-align: left;
+    
+}
+
+.body h2 {
+    font-family: 'Ferry';
+    font-size: 30px;
+    line-height: 36px;    
+    letter-spacing: 0.02em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.title {
+    display: flex;
+}
+
+.titleText {
+    flex: 0 1 50%;
+}
+
+.titleText h1 {
+    font-family: 'Ferry';
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    font-weight: 900;
+}
+
+.titleText p {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;   
+}
+
+.titleImg {
+    margin: 0 auto;
+}
+
+.titleImg img{
+    margin-top: -5%;
+}
+
+
+.tableBody {
+    box-sizing: border-box;   
+    height: 158px;
+    left: 94px;
+    top: 571px;
+    border: 2px solid #029491;
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.summaryTable {
+    position: relative;
+}
+
+.arr {
+    cursor: pointer;
+    top: 35%;
+    position: absolute;
+}
+
+.arrLeft {  
+    left: 3%;
+}
+
+.arrRight {
+    transform: rotate(180deg);
+    right: 3%;
+}
+
+
+.listItem {
+    max-width: 641px;
+    max-height: 694px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 19px 30px 35px 30px;
+}
+
+.listItem p {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;   
+    color: #949494;
+}
+
+
+.itemSubTitle {
+    display: flex;
+}
+
+.itemSorse a {
+    text-decoration: underline;
+}
+
+.itemDate {
+    padding-right: 14px;
+}
+
+
+.itemTitle {
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0.02em;
+    font-size: 26px;
+    padding-bottom: 18px;
+}
+
+.itemType {
+    width: 157px;
+    background: #FFB64F;
+    border-radius: 5px;
+    height: 22px;    
+    text-align: center;
+}
+
+.itemImage {
+    max-width: 100%;
+    min-height: 158px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 18px 0;
+}
+
+.itemText {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;    
+    opacity: 0.5;
+}
+
+
+
+.itemFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemFooter button{
+    width: 223px;
+    height: 46.54px;
+    background: #7CE3E1;
+    border-radius: 5px;
+    margin: 30px 0 0 0;
+}
+
+.listButton {
+    text-align: center;
+    padding: 54px 0 0 0 ;
+    
+}
+
+.listButtonMore {
+    width: 305px;
+    height: 59px;
+    border-radius: 5px;
+    background: #5970FF;
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;    
+    letter-spacing: 0.04em;
+}

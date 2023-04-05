@@ -20,8 +20,7 @@ export default function mainSearch() {
                       <button className={css.button}>
                           Запросить данные
                           </button>
-                  </Link>
-                  
+                  </Link>                  
               </div>
           </div>
           <div className={css.image}>

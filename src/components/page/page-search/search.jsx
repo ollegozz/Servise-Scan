@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from '../../UI/input/input'
 import Select from '../../UI/select/select'
 import css from './search.module.css'
+import { Link } from 'react-router-dom';
 
 export default function Search() {
 
@@ -97,11 +98,15 @@ export default function Search() {
             </div>
           </div>        
         </div>
-        <div className={css.btn}>
-          <button className={css.button}
-          onClick={getLog}
-          >Поиск</button>  
-       </div>       
+        <Link to={`./result`}>
+          <div className={css.btn}>
+            <button className={css.button}
+              onClick={getLog}
+            >Поиск</button>
+          </div>    
+        </Link>
+
+           
        <div className={css.note}>
           * Обязательные к заполнению поля
        </div>

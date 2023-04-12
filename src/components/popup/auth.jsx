@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import css from './auth.module.css'
 import google from '../image/icon/google.png'
 import facebook from '../image/icon/facebook.png'
@@ -26,7 +26,15 @@ export default function Auth() {
         setStatusAuth(await response.json())
     }
 
-    console.log(statusAuth);
+    useEffect(() => {
+        localStorage.setItem('accessToken', statusAuth.accessToken);
+        localStorage.setItem('expire', statusAuth.expire);  
+    }, [statusAuth])
+
+    // console.log(localStorage.getItem('expire'));
+    // console.log(localStorage.getItem('accessToken'));
+
+    
 
     return (
 

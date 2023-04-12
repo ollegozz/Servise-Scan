@@ -12,6 +12,7 @@ import PageSearch from './components/page/page-search/PageSearch';
 import Auth from './components/popup/auth';
 
 function App() {
+
   return (
     <div className="App">
       <Header />

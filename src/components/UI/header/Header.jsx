@@ -7,17 +7,24 @@ import Auth from '../../popup/auth';
 
 
 
-export default function () {
+export default function Header () {
 
-    const [authData, setAuthData] = useState(true)
+    const [authForm, setAuthForm] = useState(true)
+    const authExpire = localStorage.getItem('expire').split('.')[0]
+    const currentDate = new Date().toISOString().split('.')[0]
 
 
+    
 
-    const getAuth = () => {
-        setAuthData(!authData);
+    const authPopup = () => {
+        setAuthForm(!authForm);
     }
 
-    // console.log(authData);
+    console.log(currentDate <= authExpire)
+
+    console.log('currentDate', currentDate);
+    console.log('authExpire', authExpire);
+
 
     return (
         <header className={css.header}>
@@ -37,14 +44,14 @@ export default function () {
                 </div>
                 {/* </div> */}
 
-                {authData ?
+                {authForm ?
                     <div className={css.user}>
                         <button
                             className={css.btnReg}
                         >
                             Зарегистрироваться</button>
                         <button
-                            onClick={getAuth}
+                            onClick={authPopup}
                             className={css.btnAuth}
                         >
                             Войти</button>
@@ -53,7 +60,7 @@ export default function () {
                     <div className={css.user}>
                         <div className={css.userName}>Алексей А.</div>
                         <button className={css.button}
-                            onClick={getAuth}
+                            onClick={authPopup}
                         >
                             Выйти</button>
                         <img className={css.userLogo} src={user} alt="user" />

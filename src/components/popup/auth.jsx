@@ -10,12 +10,12 @@ export default function Auth() {
 
     const [login, setLogin] = useState('sf_student9')
     const [pass, setPass] = useState('k%3E%nJF9y')
-    // const [status, setStatus] = useState([])
+    const [statusAuth, setStatusAuth] = useState([])
 
     async function getAuth() {
         const url = `https://gateway.scan-interfax.ru/api/v1/account/login/`;
 
-        return await fetch(url, {
+        const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({ login: login, password: pass }),
             headers: {
@@ -23,21 +23,10 @@ export default function Auth() {
                 'Accept': 'application/json'
             },
         })
-            .then(data => {
-                console.log('data', data);
-            })
-            .catch(error => {
-                console.log('error', error);
-    })
-
-        // }).then((res) => setStatus(res.json())) 
-                    
+        setStatusAuth(await response.json())
     }
 
-    // console.log(status);
-
-
-
+    console.log(statusAuth);
 
     return (
 

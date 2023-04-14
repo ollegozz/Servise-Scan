@@ -57,7 +57,7 @@ export default function Auth() {
 
 
 
-    console.log(infoCount.eventFiltersInfo);
+    // console.log(infoCount.eventFiltersInfo);
 
 
 

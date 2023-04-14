@@ -1,12 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import css from './pageResult.module.css'
 import resultLogo from '../image/img/resultLogo.png'
 import arr from '../image/icon/arr.svg'
 
 export default function PageResult() {
 
-  
+  const [infoCount, setInfoCount] = useState()
+  const token = localStorage.getItem('accessToken')
 
+  async function getHistograms() {
+    const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body:  {
+        intervalType: 'month',
+        histogramTypes: [],
+        
+
+      }
+    })
+
+    setInfoCount(await response.json());
+  }
+
+  
 
   
   return (
@@ -25,6 +48,7 @@ export default function PageResult() {
         <div className={css.summaryTitle}>
           <h2>Общая сводка</h2>
           <p>Найдено 4 221 вариантов</p>
+          <button onClick={getHistograms}>TEST</button>
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >

@@ -4,6 +4,11 @@ import resultLogo from '../image/img/resultLogo.png'
 import arr from '../image/icon/arr.svg'
 
 export default function PageResult() {
+
+  
+
+
+  
   return (
     <div className={css.body}>
       <div className={css.title}>

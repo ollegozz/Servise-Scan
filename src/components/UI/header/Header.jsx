@@ -10,9 +10,12 @@ import Auth from '../../popup/auth';
 export default function Header () {
 
     const [authForm, setAuthForm] = useState(true)
-    const authExpire = localStorage.getItem('expire').split('.')[0]
-    const currentDate = new Date().toISOString().split('.')[0]
 
+
+   
+
+
+    
 
     
 
@@ -20,10 +23,10 @@ export default function Header () {
         setAuthForm(!authForm);
     }
 
-    console.log(currentDate <= authExpire)
+    // console.log(currentDate <= authExpire)
 
-    console.log('currentDate', currentDate);
-    console.log('authExpire', authExpire);
+    // console.log('currentDate', currentDate);
+    // console.log('authExpire', authExpire);
 
 
     return (

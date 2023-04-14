@@ -11,6 +11,13 @@ export default function Auth() {
     const [login, setLogin] = useState('sf_student9')
     const [pass, setPass] = useState('k%3E%nJF9y')
     const [statusAuth, setStatusAuth] = useState([])
+    const [infoCount, setInfoCount] = useState()
+
+    const authExpire = localStorage.getItem('expire').split('.')[0]
+    const currentDate = new Date().toISOString().split('.')[0]
+
+    const token = localStorage.getItem('accessToken')
+    const expire = localStorage.getItem('expire')
 
     async function getAuth() {
         const url = `https://gateway.scan-interfax.ru/api/v1/account/login/`;
@@ -24,17 +31,35 @@ export default function Auth() {
             },
         })
         setStatusAuth(await response.json())
+        getCount()
     }
 
     useEffect(() => {
         localStorage.setItem('accessToken', statusAuth.accessToken);
-        localStorage.setItem('expire', statusAuth.expire);  
+        localStorage.setItem('expire', statusAuth.expire);
     }, [statusAuth])
 
-    // console.log(localStorage.getItem('expire'));
-    // console.log(localStorage.getItem('accessToken'));
 
-    
+
+    async function getCount() {
+        const url = `https://gateway.scan-interfax.ru/api/v1/account/info?`;
+
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        setInfoCount(await response.json());
+    }
+
+
+
+    console.log(infoCount.eventFiltersInfo);
+
+
 
     return (
 

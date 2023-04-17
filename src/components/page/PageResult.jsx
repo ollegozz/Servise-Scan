@@ -2,11 +2,74 @@ import React, { useState } from 'react'
 import css from './pageResult.module.css'
 import resultLogo from '../image/img/resultLogo.png'
 import arr from '../image/icon/arr.svg'
+import { useEffect } from 'react'
 
 export default function PageResult() {
 
-  const [infoCount, setInfoCount] = useState()
+  const [infoCount, setInfoCount] = useState('')
+  const [test, setTest] = useState()
+  const [test1, setTest1] = useState()
   const token = localStorage.getItem('accessToken')
+
+  const histogramsBody =
+  {
+    "issueDateInterval": {
+      "startDate": "2018-01-01T00:00:00+03:00",
+      "endDate": "2022-08-31T23:59:59+03:00"
+    },
+    "searchContext": {
+      "targetSearchEntitiesContext": {
+        "targetSearchEntities": [
+          {
+            "type": "company",
+            "sparkId": null,
+            "entityId": null,
+            "inn": 7710137066,
+            "maxFullness": true,
+            "inBusinessNews": null
+          }
+        ],
+        "onlyMainRole": true,
+        "tonality": "any",
+        "onlyWithRiskFactors": false,
+        "riskFactors": {
+          "and": [],
+          "or": [],
+          "not": []
+        },
+        "themes": {
+          "and": [],
+          "or": [],
+          "not": []
+        }
+      },
+      "themesFilter": {
+        "and": [],
+        "or": [],
+        "not": []
+      }
+    },
+    "searchArea": {
+      "includedSources": [],
+      "excludedSources": [],
+      "includedSourceGroups": [],
+      "excludedSourceGroups": []
+    },
+    "attributeFilters": {
+      "excludeTechNews": true,
+      "excludeAnnouncements": true,
+      "excludeDigests": true
+    },
+    "similarMode": "duplicates",
+    "limit": 10,
+    "sortType": "sourceInfluence",
+    "sortDirectionType": "desc",
+    "intervalType": "month",
+    "histogramTypes": [
+      "totalDocuments",
+      "riskFactors"
+    ]
+  }
 
   async function getHistograms() {
     const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`;
@@ -18,70 +81,36 @@ export default function PageResult() {
         'Accept': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify({        
-          "issueDateInterval": {
-            "startDate": "2019-01-01T00:00:00+03:00",
-            "endDate": "2022-08-31T23:59:59+03:00"
-          },
-          "searchContext": {
-            "targetSearchEntitiesContext": {
-              "targetSearchEntities": [
-                {
-                  "type": "company",
-                  "sparkId": null,
-                  "entityId": null,
-                  "inn": 7710137066,
-                  "maxFullness": true,
-                  "inBusinessNews": null
-                }
-              ],
-              "onlyMainRole": true,
-              "tonality": "any",
-              "onlyWithRiskFactors": false,
-              "riskFactors": {
-                "and": [],
-                "or": [],
-                "not": []
-              },
-              "themes": {
-                "and": [],
-                "or": [],
-                "not": []
-              }
-            },
-            "themesFilter": {
-              "and": [],
-              "or": [],
-              "not": []
-            }
-          },
-          "searchArea": {
-            "includedSources": [],
-            "excludedSources": [],
-            "includedSourceGroups": [],
-            "excludedSourceGroups": []
-          },
-          "attributeFilters": {
-            "excludeTechNews": true,
-            "excludeAnnouncements": true,
-            "excludeDigests": true
-          },
-          "similarMode": "duplicates",
-          "limit": 1000,
-          "sortType": "sourceInfluence",
-          "sortDirectionType": "desc",
-          "intervalType": "month",
-          "histogramTypes": [
-            "totalDocuments",
-            "riskFactors"
-          ] 
-      })
+      body: JSON.stringify(histogramsBody)
     })
 
     setInfoCount(await response.json());
-  }
-console.log(infoCount);
 
+  }
+
+  async function getObjectId() {
+    const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(histogramsBody)
+    })
+
+
+  }
+
+  useEffect(() => {
+    infoCount && setTest(infoCount.data[0].data)
+    infoCount && setTest1(infoCount.data[1].data)
+  }, [infoCount])
+
+
+  console.log(test);
 
 
   return (
@@ -101,13 +130,58 @@ console.log(infoCount);
           <h2>Общая сводка</h2>
           <p>Найдено 4 221 вариантов</p>
           <button onClick={getHistograms}>TEST</button>
+          <button onClick={getObjectId}>TEST1</button>
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >
             <img src={arr} alt="arrow" />
           </div>
 
-          <div className={css.tableBody}></div>
+          <div className={css.tableBody}>
+            <div className={css.period}>Период
+              <div className={css.periodData}>
+                {test ? test.map((item) => (
+
+                  <p
+                    key={item.date}
+                    className={css.histogramsData}
+                  >
+                    {item.date}</p>
+                )) : 'LOADING'
+                }
+              </div>
+
+            </div>
+            <div className={css.total}>Всего
+              <div className={css.periodData}>
+                {test ? test.map((item) => (
+
+                  <p
+                    key={item.value}
+                    className={css.histogramsData}
+                  >
+                    {item.value}</p>
+                )) : 'LOADING'
+                }
+              </div>
+
+            </div>
+            <div className={css.risk}>Риски
+              <div className={css.periodData}>
+                {test1 ? test1.map((item) => (
+
+                  <p
+                    key={item.date}
+                    className={css.histogramsData}
+                  >
+                    {item.value}</p>
+                )) : 'LOADING'
+                }
+              </div>
+
+            </div>
+
+          </div>
 
           <div className={`${css.arr} ${css.arrRight}`} id='right' >
             <img src={arr} alt="arrow" />

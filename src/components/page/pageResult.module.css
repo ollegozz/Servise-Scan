@@ -77,7 +77,38 @@
     right: 3%;
 }
 
+.tableBody {
+    padding: 10px;
+    align-items: center;
+    
+}
 
+.period {
+min-height: 33.333%;
+display: flex;
+}
+
+.periodData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+min-height: 33.333%;
+display: flex;
+}
+
+.risk {
+    min-height: 33.333%;
+    display: flex;
+}
+
+
+.histogramsData {
+    border-left: 1px solid black;
+}
+
+/* ---------------------- */
 .listItem {
     max-width: 641px;
     max-height: 694px;

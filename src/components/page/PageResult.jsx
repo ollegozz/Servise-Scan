@@ -100,9 +100,25 @@ export default function PageResult() {
       },
       body: JSON.stringify(histogramsBody)
     })
-
-
   }
+
+  async function getDocuments() {
+    const url = `https://gateway.scan-interfax.ru/api/v1/documents`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify( {
+        "ids": ['1:dxx/4oSW0Y/Rm9CYeNC50ZxyUMKt0IrQkdGX0KJoFi1H0JbQo1rSkBvigKBZHdC20Koq0I/CsC0UYwHRhnrCt9CX0Y4O0KvQtGca']
+      })
+    })
+  }
+
+
 
   useEffect(() => {
     infoCount && setTest(infoCount.data[0].data)
@@ -131,6 +147,7 @@ export default function PageResult() {
           <p>Найдено 4 221 вариантов</p>
           <button onClick={getHistograms}>TEST</button>
           <button onClick={getObjectId}>TEST1</button>
+          <button onClick={getDocuments}>TEST2</button>
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >

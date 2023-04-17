@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import css from './pageResult.module.css'
 import resultLogo from '../image/img/resultLogo.png'
 import arr from '../image/icon/arr.svg'
@@ -18,20 +18,72 @@ export default function PageResult() {
         'Accept': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body:  {
-        intervalType: 'month',
-        histogramTypes: [],
-        
-
-      }
+      body: JSON.stringify({        
+          "issueDateInterval": {
+            "startDate": "2019-01-01T00:00:00+03:00",
+            "endDate": "2022-08-31T23:59:59+03:00"
+          },
+          "searchContext": {
+            "targetSearchEntitiesContext": {
+              "targetSearchEntities": [
+                {
+                  "type": "company",
+                  "sparkId": null,
+                  "entityId": null,
+                  "inn": 7710137066,
+                  "maxFullness": true,
+                  "inBusinessNews": null
+                }
+              ],
+              "onlyMainRole": true,
+              "tonality": "any",
+              "onlyWithRiskFactors": false,
+              "riskFactors": {
+                "and": [],
+                "or": [],
+                "not": []
+              },
+              "themes": {
+                "and": [],
+                "or": [],
+                "not": []
+              }
+            },
+            "themesFilter": {
+              "and": [],
+              "or": [],
+              "not": []
+            }
+          },
+          "searchArea": {
+            "includedSources": [],
+            "excludedSources": [],
+            "includedSourceGroups": [],
+            "excludedSourceGroups": []
+          },
+          "attributeFilters": {
+            "excludeTechNews": true,
+            "excludeAnnouncements": true,
+            "excludeDigests": true
+          },
+          "similarMode": "duplicates",
+          "limit": 1000,
+          "sortType": "sourceInfluence",
+          "sortDirectionType": "desc",
+          "intervalType": "month",
+          "histogramTypes": [
+            "totalDocuments",
+            "riskFactors"
+          ] 
+      })
     })
 
     setInfoCount(await response.json());
   }
+console.log(infoCount);
 
-  
 
-  
+
   return (
     <div className={css.body}>
       <div className={css.title}>
@@ -75,12 +127,12 @@ export default function PageResult() {
           <div className={css.itemImage}></div>
           <div className={css.itemText}>
             SkillFactory — школа для всех, кто хочет изменить свою карьеру и жизнь. С 2016 года обучение
-             прошли 20 000+ человек из 40 стран с 4 континентов, самому взрослому студенту сейчас 86 лет. 
-             Выпускники работают в Сбере, Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе, 
-             Ozon и других топовых компаниях.
-            Принципы SkillFactory: акцент на практике, забота о студентах и ориентир на трудоустройство. 
-            80% обучения — выполнение упражнений и реальных проектов. Каждого студента поддерживают менторы, 
-            2 саппорт-линии и комьюнити курса. А карьерный центр помогает составить резюме, подготовиться к 
+            прошли 20 000+ человек из 40 стран с 4 континентов, самому взрослому студенту сейчас 86 лет.
+            Выпускники работают в Сбере, Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе,
+            Ozon и других топовых компаниях.
+            Принципы SkillFactory: акцент на практике, забота о студентах и ориентир на трудоустройство.
+            80% обучения — выполнение упражнений и реальных проектов. Каждого студента поддерживают менторы,
+            2 саппорт-линии и комьюнити курса. А карьерный центр помогает составить резюме, подготовиться к
             собеседованиям и познакомиться с IT-рекрутерами.
           </div>
           <div className={css.itemFooter}>

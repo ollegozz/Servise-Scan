@@ -48,6 +48,8 @@ function App() {
     } else setChekForm(!chekForm)
   }
 
+  
+
   async function getCount(token) {
     const url = `https://gateway.scan-interfax.ru/api/v1/account/info?`;
 
@@ -58,9 +60,14 @@ function App() {
         'Accept': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-    })
-    setInfoCount(await response.json());
+    })  
+
+       const data = await response.json()
+       return setInfoCount(data)
   }
+
+  // console.log('111', infoCount);
+
 
   return (
     <div className="App">

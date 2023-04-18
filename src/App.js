@@ -20,8 +20,8 @@ function App() {
   const [statusAuth, setStatusAuth] = useState()
   const [infoCount, setInfoCount] = useState()
   const [chekForm, setChekForm] = useState(true)
-
-  const [authForm, setAuthForm] = useState(true)
+  const [authForm, setAuthForm] = useState(false)
+  const [authDone, setAuthDone] = useState(false)
 
   const authPopup = () => {
     setAuthForm(!authForm);
@@ -44,9 +44,9 @@ function App() {
     if (response.status === 200) {
       getCount(data.accessToken)
       authPopup()
+      setAuthDone(!authDone)
     } else setChekForm(!chekForm)
   }
-
 
   async function getCount(token) {
     const url = `https://gateway.scan-interfax.ru/api/v1/account/info?`;
@@ -62,30 +62,28 @@ function App() {
     setInfoCount(await response.json());
   }
 
-
-
   return (
     <div className="App">
       <Context.Provider value={{
         getAuth, authPopup,
-        authForm, setAuthForm,
+        authForm, setAuthForm, authDone,
         login, setLogin,
         pass, setPass,
         statusAuth, setStatusAuth,
         infoCount, setInfoCount,
         chekForm, setChekForm,
       }}>
-      <Header />
-      <Routes>
-        <Route path='/' element={<PageMain />} />
-        <Route path='/tarifs' element={<PageTarifs />} />
-        <Route path='/FAQ' element={<PageFaq />} />
-        <Route path='/search' element={<PageSearch />} />
-        <Route path='/auth' element={<Auth />} />
-        <Route path='/search/result' element={<PageResult />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
-      <Footer />
+        <Header />
+        <Routes>
+          <Route path='/' element={<PageMain />} />
+          <Route path='/tarifs' element={<PageTarifs />} />
+          <Route path='/FAQ' element={<PageFaq />} />
+          <Route path='/search' element={<PageSearch />} />
+          <Route path='/auth' element={<Auth />} />
+          <Route path='/search/result' element={<PageResult />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+        <Footer />
       </Context.Provider>
     </div>
   );

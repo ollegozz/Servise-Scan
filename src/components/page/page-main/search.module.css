@@ -49,6 +49,11 @@
     cursor: pointer;
 }
 
+.buttonDis {
+    background: #a6a6a7;
+    cursor: default;
+}
+
 @media (max-width: 1430px) {
     .title {
         font-size: 45px;

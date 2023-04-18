@@ -7,58 +7,15 @@ import { Context } from '../../context'
 
 export default function Auth() {
 
-    // const [login, setLogin] = useState('sf_student9')
-    // const [pass, setPass] = useState('k%3E%nJF9y')
-    // const [statusAuth, setStatusAuth] = useState()
-    // const [infoCount, setInfoCount] = useState()
-    // const [chekForm, setChekForm] = useState(true)
-    // const [authExpire, setAuthExpire] = useState()
-
-    // const authExpire = localStorage.getItem('expire').split('.')[0]
-    // const currentDate = new Date().toISOString().split('.')[0]
-
-    // const token = localStorage.getItem('accessToken')
-    // const expire = localStorage.getItem('expire')
-
-    // const { authPopup } = useContext(Context)
-
-
-    // async function getAuth() {
-    //     const url = `https://gateway.scan-interfax.ru/api/v1/account/login`;
-
-    //     const response = await fetch(url, {
-    //         method: 'POST',
-    //         body: JSON.stringify({ login: login, password: pass }),
-    //         headers: {
-    //             'Content-type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
-    //     })
-    //     let data = await response.json()   
-    //     localStorage.setItem('accessToken', data.accessToken);
-    //     localStorage.setItem('expire', data.expire);        
-    //     if (response.status === 200 ) {
-    //         getCount(data.accessToken)
-    //         authPopup()
-    //     } else setChekForm(!chekForm)
-        
-    // }
-
-    // console.log(chekForm);
-
     const {
-        getAuth, 
-        infoCount, setInfoCount, 
+        getAuth,
+        infoCount, setInfoCount,
         chekForm, setChekForm,
         login, setLogin,
-        pass, setPass,
+        pass, setPass } = useContext(Context)
 
 
-    } = useContext(Context)
-  
-
-    
-    return (        
+    return (
         <div className={css.body}>
             <div className={css.btnTop}>
                 <button className={css.btnAuth}>Войти</button>
@@ -66,11 +23,11 @@ export default function Auth() {
             </div>
 
             <div className={css.input}>
-                {chekForm ? 
-                <p>Логин или номер телефона:</p> 
-                :
-                    <p style={{ color:'red' }}>Не правильный логин или пароль</p>}
-                
+                {chekForm ?
+                    <p>Логин или номер телефона:</p>
+                    :
+                    <p style={{ color: 'red' }}>Не правильный логин или пароль</p>}
+
                 <input type="text"
                     onChange={e => setLogin(e.target.value)}
                     value={login}
@@ -87,7 +44,7 @@ export default function Auth() {
                     value={pass}
                 />
             </div>
-            
+
             <div className={css.btnSignIn}>
                 <button className={css.button}
                     onClick={getAuth}

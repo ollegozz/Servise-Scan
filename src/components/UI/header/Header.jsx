@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import css from './header.module.css'
 import logo from '../../image/icon/logo.svg'
 import user from '../../image/img/user.jpg'
@@ -10,18 +10,20 @@ import { Context } from '../../../context';
 
 export default function Header() {
 
-    const [authForm, setAuthForm] = useState(true)
+    const { authPopup, authForm,  } = useContext(Context)
+
+    // const [authForm, setAuthForm] = useState(true)
 
 
-    const authPopup = () => {
-        setAuthForm(!authForm);
-    }
+    // const authPopup = () => {
+    //     setAuthForm(!authForm);
+    // }
 
 
     return (
-        <Context.Provider value={{
-            authPopup
-        }}>
+        // <Context.Provider value={{
+        //     authPopup
+        // }}>
             <header className={css.header}>
                 <div className={css.content}>
                     <div className={css.logo}>
@@ -66,6 +68,6 @@ export default function Header() {
 
                 </div>
             </header>
-        </Context.Provider>
+        //  </Context.Provider>
     )
 }

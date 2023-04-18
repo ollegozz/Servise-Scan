@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import css from './auth.module.css'
 import google from '../image/icon/google.png'
 import facebook from '../image/icon/facebook.png'
@@ -7,11 +7,11 @@ import { Context } from '../../context'
 
 export default function Auth() {
 
-    const [login, setLogin] = useState('sf_student9')
-    const [pass, setPass] = useState('k%3E%nJF9y')
-    const [statusAuth, setStatusAuth] = useState()
-    const [infoCount, setInfoCount] = useState()
-    const [chekForm, setChekForm] = useState(true)
+    // const [login, setLogin] = useState('sf_student9')
+    // const [pass, setPass] = useState('k%3E%nJF9y')
+    // const [statusAuth, setStatusAuth] = useState()
+    // const [infoCount, setInfoCount] = useState()
+    // const [chekForm, setChekForm] = useState(true)
     // const [authExpire, setAuthExpire] = useState()
 
     // const authExpire = localStorage.getItem('expire').split('.')[0]
@@ -20,49 +20,44 @@ export default function Auth() {
     // const token = localStorage.getItem('accessToken')
     // const expire = localStorage.getItem('expire')
 
-    const { authPopup } = useContext(Context)
+    // const { authPopup } = useContext(Context)
 
 
-    async function getAuth() {
-        const url = `https://gateway.scan-interfax.ru/api/v1/account/login`;
+    // async function getAuth() {
+    //     const url = `https://gateway.scan-interfax.ru/api/v1/account/login`;
 
-        const response = await fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({ login: login, password: pass }),
-            headers: {
-                'Content-type': 'application/json',
-                'Accept': 'application/json'
-            },
-        })
-        let data = await response.json()   
-        localStorage.setItem('accessToken', data.accessToken);
-        localStorage.setItem('expire', data.expire);        
-        if (response.status === 200 ) {
-            getCount(data.accessToken)
-            authPopup()
-        } else setChekForm(!chekForm)
+    //     const response = await fetch(url, {
+    //         method: 'POST',
+    //         body: JSON.stringify({ login: login, password: pass }),
+    //         headers: {
+    //             'Content-type': 'application/json',
+    //             'Accept': 'application/json'
+    //         },
+    //     })
+    //     let data = await response.json()   
+    //     localStorage.setItem('accessToken', data.accessToken);
+    //     localStorage.setItem('expire', data.expire);        
+    //     if (response.status === 200 ) {
+    //         getCount(data.accessToken)
+    //         authPopup()
+    //     } else setChekForm(!chekForm)
         
-    }
+    // }
 
-    console.log(chekForm);
+    // console.log(chekForm);
 
+    const {
+        getAuth, 
+        infoCount, setInfoCount, 
+        chekForm, setChekForm,
+        login, setLogin,
+        pass, setPass,
+
+
+    } = useContext(Context)
   
 
-    async function getCount(token) {
-        const url = `https://gateway.scan-interfax.ru/api/v1/account/info?`;
-
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-        })
-        setInfoCount(await response.json());
-    }
-
-
+    
     return (        
         <div className={css.body}>
             <div className={css.btnTop}>

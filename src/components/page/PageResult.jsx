@@ -9,6 +9,7 @@ export default function PageResult() {
   const [infoCount, setInfoCount] = useState('')
   const [test, setTest] = useState()
   const [test1, setTest1] = useState()
+  const [content, setContent] = useState()
   const token = localStorage.getItem('accessToken')
 
   const histogramsBody =
@@ -116,7 +117,10 @@ export default function PageResult() {
         "ids": ['1:dxx/4oSW0Y/Rm9CYeNC50ZxyUMKt0IrQkdGX0KJoFi1H0JbQo1rSkBvigKBZHdC20Koq0I/CsC0UYwHRhnrCt9CX0Y4O0KvQtGca']
       })
     })
+    setContent(await response.json())
   }
+
+  console.log(content);
 
 
 

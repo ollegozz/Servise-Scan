@@ -7,12 +7,16 @@ import Auth from '../../popup/auth';
 import { Context } from '../../../context';
 
 
+
 export default function Header() {
 
     const [authForm, setAuthForm] = useState(true)
+
+
     const authPopup = () => {
         setAuthForm(!authForm);
     }
+
 
     return (
         <Context.Provider value={{

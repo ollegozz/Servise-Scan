@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import css from './auth.module.css'
 import google from '../image/icon/google.png'
 import facebook from '../image/icon/facebook.png'
@@ -63,7 +63,7 @@ export default function Auth() {
     }
 
 
-    return (
+    return (        
         <div className={css.body}>
             <div className={css.btnTop}>
                 <button className={css.btnAuth}>Войти</button>

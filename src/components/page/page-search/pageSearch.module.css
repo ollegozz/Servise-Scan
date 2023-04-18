@@ -1,7 +1,7 @@
 .body {
     min-height: 70vh;
     padding: 39px 0 64px;
-        
+
 }
 
 .content {
@@ -38,5 +38,17 @@
     flex: 0 1 66.66%;
 }
 
-.content img {
+
+@media(max-width: 1200px) {
+    .titleImgFolder {
+        display: none;
+    }
+
+    .formRocket {
+        display: none;
+    }
+
+    .titleImgDock {
+        position: absolute;
+    }
 }

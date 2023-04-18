@@ -12,12 +12,19 @@ export default function Search() {
   const [startDate, setStartDate] = useState()
   const [finishDate, setFinishtDate] = useState()
 
+  const [maxFullness, setMaxFullness] = useState(false)
+  const [inBusinessNews, setInBusinessNews] = useState(false)
+  const [onlyMainRole, setOnlyMainRole] = useState(false)
+  const [onlyWithRiskFactors, setOnlyWithRiskFactors] = useState(false)
+  const [isTechNews, setIsTechNews] = useState(false)
+  const [isAnnouncement, setIsAnnouncement] = useState(false)
+  const [isDigest, setIsDigest] = useState(false)
+
   const getLog = (e) => {
     e.preventDefault()
-    console.log(inn, amtDoc, tonality, startDate, finishDate)
+    
   }
   
-
   const onChangeSelect = (e) => {
     setTonality(e)
   }
@@ -30,6 +37,35 @@ export default function Search() {
     setFinishtDate(e)
   }
 
+  function chekMaxFullness() {
+    setMaxFullness(!maxFullness)
+  }
+
+  function chekInBusinessNews() {
+    setInBusinessNews(!inBusinessNews)
+  }
+
+  function chekOnlyMainRole() {
+    setOnlyMainRole(!onlyMainRole)
+  }
+
+  function chekOnlyWithRiskFactors() {
+    setOnlyWithRiskFactors(!onlyWithRiskFactors)
+  }
+
+  function chekIsTechNews() {
+    setIsTechNews(!isTechNews)
+  }
+
+  function chekIsAnnouncement() {
+    setIsAnnouncement(!isAnnouncement)
+  }
+
+  function chekIsDigest() {
+    setIsDigest(!isDigest)
+  }
+
+  console.log(onlyWithRiskFactors);
 
   return (
     <main className={css.content}>
@@ -69,31 +105,32 @@ export default function Search() {
           </div>
           <div className={css.right}>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
-              <label className={css.formTitle}>Признак максимальной полноты</label>
+              <input type="checkbox" onChange={chekMaxFullness}></input>
+              <label className={css.formTitle}>
+                Признак максимальной полноты</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekInBusinessNews}></input>
               <label className={css.formTitle}>Упоминания в бизнес-контексте</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekOnlyMainRole}></input>
               <label className={css.formTitle}>Главная роль в публикации</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekOnlyWithRiskFactors}></input>
               <label className={css.formTitle}>Публикации только с риск-факторами</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekIsTechNews}></input>
               <label className={css.formTitle}>Включать технические новости рынков</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekIsAnnouncement} ></input>
               <label className={css.formTitle}>Включать анонсы и календари</label>
             </div>
             <div className={css.checkbox}>
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={chekIsDigest}></input>
               <label className={css.formTitle}>Включать сводки новостей</label>
             </div>
           </div>        

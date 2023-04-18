@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Input from '../../UI/input/input'
 import Select from '../../UI/select/select'
 import css from './search.module.css'
 import { Link } from 'react-router-dom';
+// import { Context } from '../../../context';
 
 export default function Search() {
+  // const { getHistograms, getObjectId } = useContext(Context)
 
   const [inn, setInn] = useState()
   const [amtDoc, setAmtDoc] = useState()
@@ -22,7 +24,6 @@ export default function Search() {
 
   const getLog = (e) => {
     e.preventDefault()
-    
   }
   
   const onChangeSelect = (e) => {

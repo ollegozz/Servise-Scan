@@ -66,7 +66,88 @@ function App() {
        return setInfoCount(data)
   }
 
-  // console.log('111', infoCount);
+
+  // ==================
+  const [infoHistograms, setInfoHistograms] = useState('')
+  const token = localStorage.getItem('accessToken')
+
+  const histogramsBody =
+  {
+    "issueDateInterval": {
+      "startDate": "2018-01-01T00:00:00+03:00",
+      "endDate": "2022-08-31T23:59:59+03:00"
+    },
+    "searchContext": {
+      "targetSearchEntitiesContext": {
+        "targetSearchEntities": [
+          {
+            "type": "company",
+            "sparkId": null,
+            "entityId": null,
+            "inn": 7710137066,
+            "maxFullness": true,
+            "inBusinessNews": null
+          }
+        ],
+        "onlyMainRole": true,
+        "tonality": "any",
+        "onlyWithRiskFactors": false,
+        "riskFactors": {
+          "and": [],
+          "or": [],
+          "not": []
+        },
+        "themes": {
+          "and": [],
+          "or": [],
+          "not": []
+        }
+      },
+      "themesFilter": {
+        "and": [],
+        "or": [],
+        "not": []
+      }
+    },
+    "searchArea": {
+      "includedSources": [],
+      "excludedSources": [],
+      "includedSourceGroups": [],
+      "excludedSourceGroups": []
+    },
+    "attributeFilters": {
+      "excludeTechNews": true,
+      "excludeAnnouncements": true,
+      "excludeDigests": true
+    },
+    "similarMode": "duplicates",
+    "limit": 10,
+    "sortType": "sourceInfluence",
+    "sortDirectionType": "desc",
+    "intervalType": "month",
+    "histogramTypes": [
+      "totalDocuments",
+      "riskFactors"
+    ]
+  }
+
+  async function getHistograms() {
+    const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(histogramsBody)
+    })
+    setInfoHistograms(await response.json());
+  }
+  // ===================
+  
+  // ======================
 
 
   return (
@@ -79,6 +160,8 @@ function App() {
         statusAuth, setStatusAuth,
         infoCount, setInfoCount,
         chekForm, setChekForm,
+        getHistograms, histogramsBody,
+        infoHistograms, setInfoHistograms,
       }}>
         <Header />
         <Routes>

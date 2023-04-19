@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import css from './pageResult.module.css'
 import resultLogo from '../image/img/resultLogo.png'
-import arr from '../image/icon/arr.svg'
+import arr from '../image/icon/arr.png'
 import { Context } from '../../context'
 
 export default function PageResult() {

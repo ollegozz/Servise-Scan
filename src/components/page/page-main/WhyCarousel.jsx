@@ -5,7 +5,7 @@ import imgCheck from '../../image/img/mainCheck.jpg'
 import time from '../../image/icon/time.svg'
 import loupe from '../../image/icon/loupe.svg'
 import sheild from '../../image/icon/sheild.svg'
-import arr from '../../image/icon/arr.svg'
+import arr from '../../image/icon/arr.png'
 
 const dataCarousel = [
     {

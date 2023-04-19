@@ -4,6 +4,7 @@ import resultLogo from '../image/img/resultLogo.png'
 import arr from '../image/icon/arr.png'
 import { Context } from '../../context'
 
+
 export default function PageResult() {
 
   const { infoHistograms, getHistograms, histogramsBody, } = useContext(Context)
@@ -13,7 +14,6 @@ export default function PageResult() {
   const [content, setContent] = useState()
   const [objectId, setObjectId] = useState()
   const token = localStorage.getItem('accessToken')
-
 
   async function getObjectId() {
     const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch`;

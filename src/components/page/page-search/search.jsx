@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 // import { Context } from '../../../context';
 
 export default function Search() {
-  // const { getHistograms, getObjectId } = useContext(Context)
 
   const [inn, setInn] = useState()
   const [amtDoc, setAmtDoc] = useState()
@@ -66,7 +65,7 @@ export default function Search() {
     setIsDigest(!isDigest)
   }
 
-  console.log(onlyWithRiskFactors);
+  // console.log(onlyWithRiskFactors);
 
   return (
     <main className={css.content}>

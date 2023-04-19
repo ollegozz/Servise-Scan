@@ -39,7 +39,7 @@ export default function Header() {
                     <Link to={`./tarifs`}>Тарифы</Link>
                     <Link to={`./FAQ`}>FAQ</Link>
                 </div>
-                {authDone === false ?
+                {token === null ?
                     ''
                     :
                     <div className={css.info}>

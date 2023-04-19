@@ -7,7 +7,6 @@ import loupe from '../../image/icon/loupe.svg'
 import sheild from '../../image/icon/sheild.svg'
 // import arr from '../../image/icon/arr.png'
 
-import { FiChevronLeft } from "react-icons/fi";
 const dataCarousel = [
     {
         id: 1,

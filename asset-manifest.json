@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ollegozz/pj-06/static/css/main.95834ac1.css",
-    "main.js": "/ollegozz/pj-06/static/js/main.11396ee3.js",
+    "main.js": "/ollegozz/pj-06/static/js/main.5268912b.js",
     "static/media/logo.svg": "/ollegozz/pj-06/static/media/logo.86a54eaa08b1c46fdf907552e01ffc3f.svg",
     "static/media/mainSearch.jpg": "/ollegozz/pj-06/static/media/mainSearch.08e3df29b3654abe878a.jpg",
     "static/media/mainCheck.jpg": "/ollegozz/pj-06/static/media/mainCheck.1d592a3e2b58f55f9a14.jpg",
@@ -19,10 +19,10 @@
     "static/media/nout.svg": "/ollegozz/pj-06/static/media/nout.ba581528001f5237be7394bb1c290f9f.svg",
     "index.html": "/ollegozz/pj-06/index.html",
     "main.95834ac1.css.map": "/ollegozz/pj-06/static/css/main.95834ac1.css.map",
-    "main.11396ee3.js.map": "/ollegozz/pj-06/static/js/main.11396ee3.js.map"
+    "main.5268912b.js.map": "/ollegozz/pj-06/static/js/main.5268912b.js.map"
   },
   "entrypoints": [
     "static/css/main.95834ac1.css",
-    "static/js/main.11396ee3.js"
+    "static/js/main.5268912b.js"
   ]
 }

@@ -5,8 +5,9 @@ import imgCheck from '../../image/img/mainCheck.jpg'
 import time from '../../image/icon/time.svg'
 import loupe from '../../image/icon/loupe.svg'
 import sheild from '../../image/icon/sheild.svg'
-import arr from '../../image/icon/arr.png'
+// import arr from '../../image/icon/arr.png'
 
+import { FiChevronLeft } from "react-icons/fi";
 const dataCarousel = [
     {
         id: 1,
@@ -52,10 +53,12 @@ export default function WhyCarousel() {
             <h1 className={css.title}>Почему именно мы</h1>
             <div className={css.carousel}>
                 <div className={`${css.arr} ${css.arrLeft}`} id='left' onClick={moveSlide}>
-                    <img src={arr} alt="arrow" />
+                    {/* <img src={FiChevronLeft} alt="arrow" /> */}
+                    <p>	&lt; </p>
                 </div>
                 <div className={`${css.arr} ${css.arrRight}`} id='right' onClick={moveSlide}>
-                    <img src={arr} alt="arrow" />
+                    <p>	&gt; </p>
+                    {/* <img src={FiChevronLeft} alt="arrow" /> */}
                 </div>
 
                 <div className={css.cards}>

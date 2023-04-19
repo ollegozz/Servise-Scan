@@ -3,9 +3,11 @@ import Input from '../../UI/input/input'
 import Select from '../../UI/select/select'
 import css from './search.module.css'
 import { Link } from 'react-router-dom';
-// import { Context } from '../../../context';
+import { Context } from '../../../context';
 
 export default function Search() {
+
+  const { histogramsBody } = useContext(Context)
 
   const [inn, setInn] = useState()
   const [amtDoc, setAmtDoc] = useState()
@@ -38,7 +40,7 @@ export default function Search() {
   }
 
   function chekMaxFullness() {
-    setMaxFullness(!maxFullness)
+    setMaxFullness(!maxFullness)    
   }
 
   function chekInBusinessNews() {

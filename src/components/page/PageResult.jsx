@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import css from './pageResult.module.css'
 import resultLogo from '../image/img/resultLogo.png'
-import arr from '../image/icon/arr.png'
+// import arr from '../image/icon/arr.png'
 import { Context } from '../../context'
 
 
@@ -89,7 +89,8 @@ export default function PageResult() {
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >
-            <img src={arr} alt="arrow" />
+            <p>	&lt; </p>
+            {/* <img src={arr} alt="arrow" /> */}
           </div>
 
           <div className={css.tableBody}>
@@ -139,7 +140,8 @@ export default function PageResult() {
           </div>
 
           <div className={`${css.arr} ${css.arrRight}`} id='right' >
-            <img src={arr} alt="arrow" />
+            {/* <img src={arr} alt="arrow" /> */}
+            <p>	&gt; </p>
           </div>
         </div>
       </div>

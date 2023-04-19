@@ -64,8 +64,10 @@
 
 .arr {
     cursor: pointer;
-    top: 35%;
+    top: 1%;
     position: absolute;
+    font-size: 50px;
+    font-weight: 900;
 }
 
 .arrLeft {  
@@ -73,7 +75,7 @@
 }
 
 .arrRight {
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
     right: 3%;
 }
 

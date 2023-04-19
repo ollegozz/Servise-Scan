@@ -69,6 +69,8 @@ function App() {
   const [infoHistograms, setInfoHistograms] = useState('')
   const token = localStorage.getItem('accessToken')
 
+  
+
   const histogramsBody =
   {
     "issueDateInterval": {

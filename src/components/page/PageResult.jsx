@@ -9,8 +9,8 @@ export default function PageResult() {
 
   const { infoHistograms, getHistograms, histogramsBody, } = useContext(Context)
 
-  const [test, setTest] = useState()
-  const [test1, setTest1] = useState()
+  const [period, setPeriod] = useState()
+  const [risk, setRisk] = useState()
   const [content, setContent] = useState()
   const [objectId, setObjectId] = useState()
   const token = localStorage.getItem('accessToken')
@@ -53,8 +53,8 @@ export default function PageResult() {
 
 
   useEffect(() => {
-    infoHistograms && setTest(infoHistograms.data[0].data)
-    infoHistograms && setTest1(infoHistograms.data[1].data)
+    infoHistograms && setPeriod(infoHistograms.data[0].data)
+    infoHistograms && setRisk(infoHistograms.data[1].data)
   }, [infoHistograms])
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function PageResult() {
   }, [objectId])
 
 
-  // console.log(test);
+  // console.log(period);
 
   return (
     <div className={css.body}>
@@ -85,52 +85,50 @@ export default function PageResult() {
         <div className={css.summaryTitle}>
           <h2>Общая сводка</h2>
           <p>Найдено 4 221 вариантов</p>
-          <button onClick={getDocuments}>TEST2</button>
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >
             <p>	&lt; </p>
-            {/* <img src={arr} alt="arrow" /> */}
           </div>
 
           <div className={css.tableBody}>
-            <div className={css.period}>Период
+            <div className={css.period}><p>Период</p> 
               <div className={css.periodData}>
-                {test ? test.map((item) => (
+                {period ? period.map((item) => (
 
-                  <p
+                  <div
                     key={item.date}
                     className={css.histogramsData}
                   >
-                    {item.date}</p>
+                    {item.date.split('T',1)}</div>
                 )) : 'LOADING'
                 }
               </div>
 
             </div>
-            <div className={css.total}>Всего
+            <div className={css.total}><p>Всего</p>
               <div className={css.periodData}>
-                {test ? test.map((item) => (
+                {period ? period.map((item) => (
 
-                  <p
+                  <div
                     key={item.value}
                     className={css.histogramsData}
                   >
-                    {item.value}</p>
+                    {item.value}</div>
                 )) : 'LOADING'
                 }
               </div>
 
             </div>
-            <div className={css.risk}>Риски
+            <div className={css.risk}><p>Риски</p>
               <div className={css.periodData}>
-                {test1 ? test1.map((item) => (
+                {risk ? risk.map((item) => (
 
-                  <p
+                  <div
                     key={item.date}
                     className={css.histogramsData}
                   >
-                    {item.value}</p>
+                    {item.value}</div>
                 )) : 'LOADING'
                 }
               </div>
@@ -140,7 +138,6 @@ export default function PageResult() {
           </div>
 
           <div className={`${css.arr} ${css.arrRight}`} id='right' >
-            {/* <img src={arr} alt="arrow" /> */}
             <p>	&gt; </p>
           </div>
         </div>
@@ -148,11 +145,12 @@ export default function PageResult() {
 
       <div className={css.listDock}>
         <h2>Список документов</h2>
+        <div className={css.listItems}>
         {content && content.map((item) => {
           return (
             <div className={css.listItem} key={item.ok.id}>
               <div className={css.itemSubTitle}>
-                <p className={css.itemDate}>{item.ok.issueDate}</p>
+                <p className={css.itemDate}>{item.ok.issueDate.split('T', 1)}</p>
                 <p className={css.itemSorse}><a href={item.ok.url}>{item.ok.source.name}</a></p>
               </div>
 
@@ -172,6 +170,7 @@ export default function PageResult() {
           )
         }
         )}
+        </div>
       </div>
       <div className={css.listButton}>
         <button className={css.listButtonMore}>Показать больше</button>

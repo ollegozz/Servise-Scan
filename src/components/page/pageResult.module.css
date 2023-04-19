@@ -2,8 +2,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 69px 60px;
-    text-align: left;
-    
+    text-align: left;    
 }
 
 .body h2 {
@@ -71,18 +70,22 @@
 }
 
 .arrLeft {  
-    left: 3%;
+    left: 1%;
 }
 
 .arrRight {
-    /* transform: rotate(180deg); */
-    right: 3%;
+    right: 1%;
 }
 
 .tableBody {
+    max-width: 91%;
     padding: 10px;
-    align-items: center;
-    
+    align-items: center;  
+    text-align: center;  
+}
+
+.tableBody p {
+    width: 80px;
 }
 
 .period {
@@ -90,9 +93,17 @@ min-height: 33.333%;
 display: flex;
 }
 
+
+
 .periodData {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 0 15px;    
+}
+
+.periodData div {
+    padding: 0 5px;
+    width: 124px;
 }
 
 .total {
@@ -107,17 +118,25 @@ display: flex;
 
 
 .histogramsData {
-    border-left: 1px solid black;
+    border-left: 1px solid #949494;
 }
 
 /* ---------------------- */
+.listItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .listItem {
-    max-width: 641px;
+    max-width: 40%;
     max-height: 694px;
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 19px 30px 35px 30px;
+    margin: 10px;
+    flex-wrap: wrap;
 }
 
 .listItem p {
@@ -138,8 +157,8 @@ display: flex;
 
 .itemDate {
     padding-right: 14px;
+    min-width: 15%;
 }
-
 
 .itemTitle {
     font-weight: 500;
@@ -171,8 +190,6 @@ display: flex;
     letter-spacing: 0.02em;    
     opacity: 0.5;
 }
-
-
 
 .itemFooter {
     display: flex;

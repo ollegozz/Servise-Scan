@@ -84,7 +84,7 @@ export default function PageResult() {
       <div className={css.summary}>
         <div className={css.summaryTitle}>
           <h2>Общая сводка</h2>
-          <p>Найдено 4 221 вариантов</p>
+          <p>Найдено 5 вариантов</p>
         </div>
         <div className={css.summaryTable}>
           <div className={`${css.arr} ${css.arrLeft}`} id='left' >

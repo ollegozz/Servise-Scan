@@ -23,6 +23,13 @@ function App() {
   const [authForm, setAuthForm] = useState(false)
   const [authDone, setAuthDone] = useState(false)
 
+  // ==============
+  const [inn, setInn] = useState(7710137066)
+
+  
+
+  // ==============
+
   const authPopup = () => {
     setAuthForm(!authForm);
   }
@@ -159,6 +166,8 @@ function App() {
         chekForm, setChekForm,
         getHistograms, histogramsBody,
         infoHistograms, setInfoHistograms,
+
+        inn, setInn
       }}>
         <Header />
         <Routes>

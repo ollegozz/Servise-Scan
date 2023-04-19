@@ -7,9 +7,8 @@ import { Context } from '../../../context';
 
 export default function Search() {
 
-  const { histogramsBody } = useContext(Context)
-
-  const [inn, setInn] = useState()
+  const { inn, setInn } = useContext(Context)
+    
   const [amtDoc, setAmtDoc] = useState()
   const [tonality, setTonality] = useState()
   const [startDate, setStartDate] = useState()
@@ -23,6 +22,7 @@ export default function Search() {
   const [isAnnouncement, setIsAnnouncement] = useState(false)
   const [isDigest, setIsDigest] = useState(false)
 
+  
   const getLog = (e) => {
     e.preventDefault()
   }
@@ -67,7 +67,6 @@ export default function Search() {
     setIsDigest(!isDigest)
   }
 
-  // console.log(onlyWithRiskFactors);
 
   return (
     <main className={css.content}>
@@ -76,8 +75,10 @@ export default function Search() {
           <div className={css.left}>
             <div className={css.formTitle}>ИНН компании*</div>
             <Input
+              size="12"
               type='number'
               placeholder='10 цифр'
+              value={inn}
               onChange={e => setInn(e.target.value)}
             />
 

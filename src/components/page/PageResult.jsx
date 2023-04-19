@@ -6,16 +6,15 @@ import { Context } from '../../context'
 
 export default function PageResult() {
 
-  const { infoHistograms, setInfoHistograms, getHistograms, histogramsBody,  } = useContext(Context)
+  const { infoHistograms, getHistograms, histogramsBody, } = useContext(Context)
 
   const [test, setTest] = useState()
   const [test1, setTest1] = useState()
   const [content, setContent] = useState()
-  // const [contentMap, setContentMap] = useState()
   const [objectId, setObjectId] = useState()
   const token = localStorage.getItem('accessToken')
 
-        
+
   async function getObjectId() {
     const url = `https://gateway.scan-interfax.ru/api/v1/objectsearch`;
 
@@ -29,12 +28,9 @@ export default function PageResult() {
       body: JSON.stringify(histogramsBody)
     })
     const data = await response.json()
-    // console.log(data);
-    return setObjectId (data)
+    return setObjectId(data)
   }
-  
 
- 
   async function getDocuments() {
     const url = `https://gateway.scan-interfax.ru/api/v1/documents`;
 
@@ -150,7 +146,7 @@ export default function PageResult() {
 
       <div className={css.listDock}>
         <h2>Список документов</h2>
-        {content && content.map((item) => { 
+        {content && content.map((item) => {
           return (
             <div className={css.listItem} key={item.ok.id}>
               <div className={css.itemSubTitle}>
@@ -161,7 +157,7 @@ export default function PageResult() {
               <div className={css.itemTitle}>{item.ok.title.text}</div>
               <div className={css.itemType}>{item.ok.entities.tags}</div>
               <div className={css.itemImage}></div>
-              
+
               {/* <div className={css.itemText}>{}</div> */}
               {/* <div className={css.itemText}>{item.ok.content.markup}</div> */}
 
@@ -171,9 +167,9 @@ export default function PageResult() {
               </div>
 
             </div>
-          )       
-        }   
-       )}
+          )
+        }
+        )}
       </div>
       <div className={css.listButton}>
         <button className={css.listButtonMore}>Показать больше</button>

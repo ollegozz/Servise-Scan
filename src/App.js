@@ -66,8 +66,6 @@ function App() {
        return setInfoCount(data)
   }
 
-
-  // ==================
   const [infoHistograms, setInfoHistograms] = useState('')
   const token = localStorage.getItem('accessToken')
 
@@ -145,16 +143,12 @@ function App() {
     })
     setInfoHistograms(await response.json());
   }
-  // ===================
-  
-  // ======================
-
-
+ 
   return (
     <div className="App">
       <Context.Provider value={{
         getAuth, authPopup,
-        authForm, setAuthForm, authDone,
+        authForm, setAuthForm, authDone, setAuthDone,
         login, setLogin,
         pass, setPass,
         statusAuth, setStatusAuth,

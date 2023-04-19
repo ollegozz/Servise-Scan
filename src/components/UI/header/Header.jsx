@@ -9,19 +9,24 @@ import { useEffect } from 'react';
 
 export default function Header() {
 
-    const { authPopup, authForm, authDone, infoCount } = useContext(Context)
+    const { authPopup, authForm, authDone, setAuthDone, infoCount } = useContext(Context)
 
     const [companyLimit, setCompanyLimit] = useState('-')
     const [usedCompanyCount, setUsedCompanyCount] = useState('-')
-
-
+    const [token, setToken] = useState()
 
     useEffect(() => {
         if (infoCount !== undefined) {
             setCompanyLimit(infoCount.eventFiltersInfo.companyLimit)
             setUsedCompanyCount(infoCount.eventFiltersInfo.usedCompanyCount)
         }
+        setToken(localStorage.getItem('accessToken'))
     })
+
+    function logOut () {
+        setAuthDone(!authDone)
+        localStorage.removeItem('accessToken')            
+    }
 
     return (
         <header className={css.header}>
@@ -46,7 +51,7 @@ export default function Header() {
                     </div>
                 }
 
-                {authDone === false ?
+                {token === null ?
                     <div className={css.user}>
                         <button
                             className={css.btnReg}
@@ -62,10 +67,12 @@ export default function Header() {
                     :
                     <div className={css.user}>
                         <div className={css.userName}>Алексей А.</div>
-                        <button className={css.button}
-                        // onClick={authPopup}
-                        >
-                            Выйти</button>
+                        <Link to={`./`}>
+                            <button className={css.button}
+                                onClick={logOut}
+                            >
+                                Выйти</button>
+                        </Link>                        
                         <img className={css.userLogo} src={user} alt="user" />
 
                     </div>

@@ -40,10 +40,7 @@ export default function Header() {
                     <Link to={`./FAQ`}>FAQ</Link>
                 </div>
                 {authDone === false ?
-                    <div className={css.info}>
-                        <div>Использовано компаний: <span className={css.infoUse}> - </span></div>
-                        <div>Лимит по компаниям: <span className={css.infoLim}> - </span></div>
-                    </div>
+                    ''
                     :
                     <div className={css.info}>
                         <div>Использовано компаний: <span className={css.infoUse}>{companyLimit}</span></div>

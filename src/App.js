@@ -39,9 +39,10 @@ function App() {
       },
     })
     let data = await response.json()
-    localStorage.setItem('accessToken', data.accessToken);
-    localStorage.setItem('expire', data.expire);
+    
     if (response.status === 200) {
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('expire', data.expire);
       getCount(data.accessToken)
       authPopup()
       setAuthDone(!authDone)

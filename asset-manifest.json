@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ollegozz/pj-06/static/css/main.95834ac1.css",
-    "main.js": "/ollegozz/pj-06/static/js/main.5268912b.js",
+    "main.css": "/ollegozz/pj-06/static/css/main.e33f87cc.css",
+    "main.js": "/ollegozz/pj-06/static/js/main.4e2e52bf.js",
     "static/media/logo.svg": "/ollegozz/pj-06/static/media/logo.86a54eaa08b1c46fdf907552e01ffc3f.svg",
     "static/media/mainSearch.jpg": "/ollegozz/pj-06/static/media/mainSearch.08e3df29b3654abe878a.jpg",
     "static/media/mainCheck.jpg": "/ollegozz/pj-06/static/media/mainCheck.1d592a3e2b58f55f9a14.jpg",
@@ -18,11 +18,11 @@
     "static/media/time.svg": "/ollegozz/pj-06/static/media/time.1fac99ab9c899850347b676d26527f23.svg",
     "static/media/nout.svg": "/ollegozz/pj-06/static/media/nout.ba581528001f5237be7394bb1c290f9f.svg",
     "index.html": "/ollegozz/pj-06/index.html",
-    "main.95834ac1.css.map": "/ollegozz/pj-06/static/css/main.95834ac1.css.map",
-    "main.5268912b.js.map": "/ollegozz/pj-06/static/js/main.5268912b.js.map"
+    "main.e33f87cc.css.map": "/ollegozz/pj-06/static/css/main.e33f87cc.css.map",
+    "main.4e2e52bf.js.map": "/ollegozz/pj-06/static/js/main.4e2e52bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.95834ac1.css",
-    "static/js/main.5268912b.js"
+    "static/css/main.e33f87cc.css",
+    "static/js/main.4e2e52bf.js"
   ]
 }

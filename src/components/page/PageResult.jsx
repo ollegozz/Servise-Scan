@@ -32,7 +32,9 @@ export default function PageResult() {
     // console.log(data);
     return setObjectId (data)
   }
+  
 
+ 
   async function getDocuments() {
     const url = `https://gateway.scan-interfax.ru/api/v1/documents`;
 
@@ -44,16 +46,15 @@ export default function PageResult() {
         'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        // "ids": ["1:dxx/4oSW0Y/Rm9CYeNC50ZxyUMKt0IrQkdGX0KJoFi1H0JbQo1rSkBvigKBZHdC20Koq0I/CsC0UYwHRhnrCt9CX0Y4O0KvQtGca"]
-        "ids": [objectId.items[2].encodedId]
+        "ids": objectId.items.map((item) => {
+          return item.encodedId
+        })
       })
     })
     const data = await response.json()
-    // console.log(data[0].ok);
     return setContent(data)
   }
 
-  // console.log('cont', content[0].ok.issueDate);
 
   useEffect(() => {
     infoHistograms && setTest(infoHistograms.data[0].data)
@@ -173,32 +174,6 @@ export default function PageResult() {
           )       
         }   
        )}
-
-
-        <div className={css.listItem}>
-          <div className={css.itemSubTitle}>
-            <p className={css.itemDate}>13.09.2021</p>
-            <p className={css.itemSorse}><a href="/#">Комсомольская правда KP.RU</a></p>
-          </div>
-          <div className={css.itemTitle}>Скиллфэктори - лучшая онлайн-школа для будущих айтишников</div>
-          <div className={css.itemType}>Технические новости</div>
-          <div className={css.itemImage}></div>
-          <div className={css.itemText}>
-            SkillFactory — школа для всех, кто хочет изменить свою карьеру и жизнь. С 2016 года обучение
-            прошли 20 000+ человек из 40 стран с 4 континентов, самому взрослому студенту сейчас 86 лет.
-            Выпускники работают в Сбере, Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе,
-            Ozon и других топовых компаниях.
-            Принципы SkillFactory: акцент на практике, забота о студентах и ориентир на трудоустройство.
-            80% обучения — выполнение упражнений и реальных проектов. Каждого студента поддерживают менторы,
-            2 саппорт-линии и комьюнити курса. А карьерный центр помогает составить резюме, подготовиться к
-            собеседованиям и познакомиться с IT-рекрутерами.
-          </div>
-
-          <div className={css.itemFooter}>
-            <button>Читать в источнике</button>
-            <p className={css.itemWord}>2543 слова</p>
-          </div>
-        </div>
       </div>
       <div className={css.listButton}>
         <button className={css.listButtonMore}>Показать больше</button>
